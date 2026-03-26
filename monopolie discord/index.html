@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PolyCord - Discord Monopoly</title>
+    <meta name="description" content="A Monopoly-inspired board game Discord Activity Activity" />
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- LOBBY SCREEN -->
+      <div id="lobby">
+        <div class="lobby-content">
+          <h1 class="lobby-title">POLYCORD</h1>
+          <p class="text-secondary">Waiting for players...</p>
+          <div class="player-list" id="lobby-players">
+            <!-- Dynamically populated -->
+          </div>
+          <button id="start-game-btn" class="btn" disabled>Waiting for Host...</button>
+          <p id="lobby-info" style="margin-top: 15px; font-size: 0.8rem; color: var(--text-secondary);">
+            Compatible with 2-6 players
+          </p>
+        </div>
+      </div>
+
+      <!-- GAME SCREEN -->
+      <div id="game-container" class="hidden">
+        <div id="board-wrapper">
+          <canvas id="game-canvas"></canvas>
+          <div id="dice-view" class="hidden">
+            <div class="die" id="die-1">1</div>
+            <div class="die" id="die-2">1</div>
+          </div>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud">
+          <div class="hud-panel" style="flex: 0 0 auto;">
+            <div id="players-list">
+              <!-- Player cards go here -->
+            </div>
+          </div>
+          <div class="hud-panel" style="flex: 1; overflow: hidden; display: flex; flex-direction: column;">
+            <h3 style="font-size: 0.9rem; margin-bottom: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;">Game Log</h3>
+            <div id="game-logs"></div>
+          </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div id="controls">
+          <button id="roll-btn" class="action-btn">ROLL DICE</button>
+        </div>
+
+        <!-- MODALS -->
+        <div id="modal-container" class="modal-overlay hidden">
+          <!-- Dynamic modals -->
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
